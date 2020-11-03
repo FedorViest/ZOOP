@@ -1,0 +1,21 @@
+
+V package Date:
+    -class Orders DEDENIE z class Date
+
+V package Department:
+    -class Room DEDENIE z class Department
+    -class Buffet DEDENIE z class Department
+    -class OperationRoom DEDENIE z class Department
+    -AGREGACIA medzi class Buffet a class Seller(package Person)
+
+V package Person:
+    -class Staff DEDENIE z class Person
+    -class Visitor DEDENIE z class Person
+    -class Patient DEDENIE z class Person
+    -AGREGACIA medzi class Doctor a class Staff
+    -AGREGACIA medzi class Nurse a class Staff
+    -AGREGACIA medzi class Seller a class Staff
+    -AGREGACIA medzi class Patient a class Date(package Date)
+    -AGREGACIA medzi class Doctor a class Workday(package Date)
+    -AGREGACIA medzi class Nurse a class Workday(package Date)
+    -AGREGACIA medzi class Seller a class Workday(package Date)
