@@ -1,8 +1,8 @@
 package Date;
 
 public class Date {
-    int day;
-    int month;
-    int year;
-    int timeHours;
+    private int day;
+    private int month;
+    private int year;
+    private int timeHours;
 }

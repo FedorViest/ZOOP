@@ -1,10 +1,10 @@
 package Department;
 
 public class Room extends Department {
+    private int capacity;
+    private int rating;
+    private int roomID;
     public Room(){
-       int capacity;
-       int rating;
-       int roomID;
     }
 
     String amentities(int rating){

@@ -1,7 +1,31 @@
 package Person;
 
 public class Person {
-    public int age;
-    int personalID;
-    String gender;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getPersonalID() {
+        return personalID;
+    }
+
+    public void setPersonalID(int personalID) {
+        this.personalID = personalID;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    private int age;
+    private int personalID;
+    private String gender;
 }
