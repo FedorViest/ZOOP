@@ -2,8 +2,8 @@ package Department;
 import Person.Seller;
 
 public class Buffet extends Department {
-    String food;
-    int price;
+    private String food;
+    private int price;
 
     boolean isOpen(Seller seller){
         return true;

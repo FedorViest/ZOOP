@@ -1,8 +1,8 @@
 package Date;
 
 public class Workday {
+    private int day;
     public Workday(){
-        int day;
     }
     boolean isWeekend(){
         return false;
