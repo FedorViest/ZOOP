@@ -1,8 +1,8 @@
 package Person;
 
 public class Visitor extends Person{
-    String patientRelationship;
-    String status;
+    private String patientRelationship;
+    private String status;
 
 
     boolean isHealthy () {

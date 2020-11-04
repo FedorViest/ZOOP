@@ -1,7 +1,7 @@
 package Person;
 
 public class Staff extends Person {
-    int workedHours;
+    private int workedHours;
 
     boolean isAvailable(){
         return true;
