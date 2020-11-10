@@ -31,11 +31,20 @@ public class Date {
         this.year = year;
     }
 
-    public int getTimeHours() {
+    public int getTime() {
         return timeHours;
     }
 
-    public void setTimeHours(int timeHours) {
+    public void setTime(int timeHours) {
         this.timeHours = timeHours;
+    }
+
+    public int convertTimeMinutes(double time){
+        double minutes = (time - (int) time) * 60;
+        return (int)minutes;
+    }
+
+    public int convertTimeHours(double time){
+        return (int) time * 60;
     }
 }

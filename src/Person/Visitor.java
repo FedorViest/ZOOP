@@ -6,6 +6,7 @@ public class Visitor extends Person{
     private String status;
 
     Visitor[] visitors;
+    Date date = new Date();
 
     public Visitor(int age){
         this.setAge(age);
@@ -54,7 +55,7 @@ public class Visitor extends Person{
     }
 
     public boolean isEjected(){
-        if (isHealthy(getStatus())){
+        if (isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960){
             return true;
         }
         else {
@@ -64,7 +65,6 @@ public class Visitor extends Person{
 
     public boolean relationshipStatus(){
         if (getPatientRelationship().equals("family") || getPatientRelationship().equals("friend")){
-            System.out.println("Visitor can come in");
             return true;
         }
         else{
@@ -72,6 +72,11 @@ public class Visitor extends Person{
             return false;
         }
     }
+
+    public void visitsAvailable(){
+        System.out.println("Visits are only available during workdays from 12:00 to 16:00");
+    }
+
     public String getPatientRelationship() {
         return patientRelationship;
     }
