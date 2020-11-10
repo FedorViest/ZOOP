@@ -2,7 +2,6 @@ package Hospital;
 
 import Date.Date;
 import Person.Visitor;
-import Person.Person;
 
 
 public class Main {
