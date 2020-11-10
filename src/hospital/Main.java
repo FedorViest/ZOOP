@@ -1,7 +1,6 @@
-package Hospital;
+package hospital;
 
 import Person.Visitor;
-import Person.Person;
 
 
 public class Main {
