@@ -2,6 +2,17 @@ package Person;
 import Date.Workday;
 
 public class Doctor {
+    private String specialisation;
+    private int experienceYears;
+
+    public Doctor(String specialisation){
+        this.specialisation = specialisation;
+    }
+
+    boolean canOperate(){
+        return false;
+    }
+
     public String getSpecialisation() {
         return specialisation;
     }
@@ -16,16 +27,5 @@ public class Doctor {
 
     public void setExperienceYears(int experienceYears) {
         this.experienceYears = experienceYears;
-    }
-
-    private String specialisation;
-    private int experienceYears;
-
-    public Doctor(String specialisation){
-        this.specialisation = specialisation;
-    }
-
-    boolean canOperate(){
-        return false;
     }
 }

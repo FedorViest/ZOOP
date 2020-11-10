@@ -1,6 +1,10 @@
 package Person;
 
 public class Person {
+    private int age;
+    private int personalID;
+    private String gender;
+
     public int getAge() {
         return age;
     }
@@ -24,8 +28,4 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
-
-    private int age;
-    private int personalID;
-    private String gender;
 }

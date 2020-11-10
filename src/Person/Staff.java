@@ -6,4 +6,12 @@ public class Staff extends Person {
     boolean isAvailable(){
         return true;
     }
+
+    public int getWorkedHours() {
+        return workedHours;
+    }
+
+    public void setWorkedHours(int workedHours) {
+        this.workedHours = workedHours;
+    }
 }
