@@ -28,4 +28,14 @@ public class Person {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+
+    public boolean isHealthy(String handler){
+        if (handler.equals("healthy")){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

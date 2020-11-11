@@ -1,5 +1,9 @@
 package Date;
 
+import Person.Visitor;
+
+import java.util.Scanner;
+
 public class Date {
     private int day;
     private int month;
@@ -39,12 +43,25 @@ public class Date {
         this.timeHours = timeHours;
     }
 
-    public int convertTimeMinutes(double time){
+    /*public int convertTimeMinutes(double time){
         double minutes = (time - (int) time) * 60;
         return (int)minutes;
+    }*/
+
+    public int convertTime(int hour, int minute){
+        return hour * 60 + minute;
     }
 
-    public int convertTimeHours(double time){
-        return (int) time * 60;
+    public void createTime(Date date, Visitor visitor){
+        visitor.visitsAvailable();
+        System.out.println("Input time of visit");
+        Scanner hour = new Scanner(System.in);
+        int newhour = hour.nextInt();
+        Scanner minute = new Scanner(System.in);
+        int newminute = minute.nextInt();
+
+        int time = date.convertTime(newhour, newminute);
+        date.setTime(time);
+        System.out.println(date.getTime());
     }
 }

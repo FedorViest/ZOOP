@@ -7,8 +7,12 @@ public class Patient extends Person{
     private String allergies;
     private String diagnosis;
 
-    public Patient() {
 
+    //association
+    public Patient(Date date) {
+        date.getDay();
+        date.getTime();
+        date.getMonth();
     }
 
     double cured () {

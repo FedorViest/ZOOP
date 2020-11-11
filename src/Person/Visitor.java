@@ -1,19 +1,23 @@
 package Person;
 import Date.Date;
 
+import java.util.Scanner;
+
 public class Visitor extends Person{
     private String patientRelationship;
     private String status;
 
-    Visitor[] visitors;
+
+    //aggregation
     Date date = new Date();
+
 
     public Visitor(int age){
         this.setAge(age);
     }
 
-
-    boolean isHealthy (String status) {
+    @Override
+    public boolean isHealthy (String status) {
         if (status.equals("healthy")) {
             return true;
         }
@@ -40,21 +44,22 @@ public class Visitor extends Person{
     }
 
     public void risk(int percentage){
-        if (percentage <= 25){
+        if (infectionChance(percentage) <= 25){
             System.out.println("Chance of getting infected is low");
         }
-        if (percentage> 25 && percentage <= 50){
+        if (infectionChance(percentage) > 25 && infectionChance(percentage) <= 50){
             System.out.println("Chance of getting infected is medium");
         }
-        if (percentage > 50 && percentage <=75){
+        if (infectionChance(percentage) > 50 && infectionChance(percentage) <=75){
             System.out.println("Chance of getting infected is high");
         }
-        if (percentage > 75 && percentage <= 100){
+        if (infectionChance(percentage) > 75 && infectionChance(percentage) <= 100){
             System.out.println("Chance of getting infected is extremely high");
         }
     }
 
-    public boolean isEjected(){
+    public boolean isEjected(Date date){
+        System.out.println(date.getTime());
         if (isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960){
             return true;
         }
@@ -91,5 +96,21 @@ public class Visitor extends Person{
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void createVisitor(Visitor visitor){
+        visitor.risk(visitor.getAge());
+        System.out.println("");
+
+        Scanner status = new Scanner(System.in);
+        System.out.println("Input 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
+        System.out.println("");
+        String inputStatus = status.nextLine();
+        Scanner relationship = new Scanner(System.in);
+        System.out.println("Input visitors relationship, either 'family', 'friend', or 'other'");
+        String inputRelationship = relationship.nextLine();
+
+        visitor.setStatus(inputStatus);
+        visitor.setPatientRelationship(inputRelationship);
     }
 }
