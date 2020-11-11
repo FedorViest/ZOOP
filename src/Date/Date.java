@@ -62,6 +62,5 @@ public class Date {
 
         int time = date.convertTime(newhour, newminute);
         date.setTime(time);
-        System.out.println(date.getTime());
     }
 }

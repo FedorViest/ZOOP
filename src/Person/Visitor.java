@@ -59,7 +59,6 @@ public class Visitor extends Person{
     }
 
     public boolean isEjected(Date date){
-        System.out.println(date.getTime());
         if (isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960){
             return true;
         }
