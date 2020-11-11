@@ -58,8 +58,22 @@ public class Visitor extends Person{
         }
     }
 
+    //overloading of function isEjected
+
     public boolean isEjected(Date date){
-        return isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960;
+        return date.getTime() >= 720 && date.getTime() <= 960;
+    }
+
+    public int isEjected(String status){
+        if (status.equals("unhealthy") || status.equals("sick")){
+            return 1;
+        }
+        else if (!status.equals("healthy")){
+            return 2;
+        }
+        else {
+            return 0;
+        }
     }
 
     public boolean relationshipStatus(){
@@ -67,13 +81,13 @@ public class Visitor extends Person{
             return true;
         }
         else{
-            System.out.println("Visitor cannot come in, because only family members or friends can come in");
+            System.out.println("\n\nVisitor cannot come in, because only family members or friends can come in");
             return false;
         }
     }
 
     public void visitsAvailable(){
-        System.out.println("Visits are only available during workdays from 12:00 to 16:00");
+        System.out.println("\n\nVisits are only available during workdays from 12:00 to 16:00");
     }
 
     public String getPatientRelationship() {
@@ -94,16 +108,11 @@ public class Visitor extends Person{
 
     public void createVisitor(Visitor visitor){
         visitor.risk(visitor.getAge());
-        System.out.println("");
-
         Scanner status = new Scanner(System.in);
-        System.out.println("Input 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
-        System.out.println("");
+        System.out.println("\n\nInput 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
         String inputStatus = status.nextLine();
         Scanner relationship = new Scanner(System.in);
-        System.out.println("");
-        System.out.println("Input visitors relationship, either 'family', 'friend', or 'other'");
-        System.out.println("");
+        System.out.println("\n\nInput visitors relationship, either 'family', 'friend', or 'other'");
         String inputRelationship = relationship.nextLine();
 
         visitor.setStatus(inputStatus);
