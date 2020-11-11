@@ -54,10 +54,13 @@ public class Date {
 
     public void createTime(Date date, Visitor visitor){
         visitor.visitsAvailable();
+        System.out.println("");
         System.out.println("Input time of visit");
         Scanner hour = new Scanner(System.in);
+        System.out.println("Insert hours:");
         int newhour = hour.nextInt();
         Scanner minute = new Scanner(System.in);
+        System.out.println("Insert minutes:");
         int newminute = minute.nextInt();
 
         int time = date.convertTime(newhour, newminute);

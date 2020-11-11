@@ -59,12 +59,7 @@ public class Visitor extends Person{
     }
 
     public boolean isEjected(Date date){
-        if (isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return isHealthy(getStatus()) && date.getTime() >= 720 && date.getTime() <= 960;
     }
 
     public boolean relationshipStatus(){
@@ -106,7 +101,9 @@ public class Visitor extends Person{
         System.out.println("");
         String inputStatus = status.nextLine();
         Scanner relationship = new Scanner(System.in);
+        System.out.println("");
         System.out.println("Input visitors relationship, either 'family', 'friend', or 'other'");
+        System.out.println("");
         String inputRelationship = relationship.nextLine();
 
         visitor.setStatus(inputStatus);
