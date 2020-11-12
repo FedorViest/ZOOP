@@ -1,6 +1,6 @@
 package Department;
 
-public class OperationRoom extends Department{
+public class OperationRoom extends Room{
 
     private boolean isReady;
 
