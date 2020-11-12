@@ -68,4 +68,6 @@ public class Main {
             System.out.println("Input 'visit' for visit");*/
         System.out.println("Input 'end' or 'close' or 'exit' to end inputting\n\n\n");
     }
+
+
 }

@@ -11,9 +11,11 @@ public class Room extends Department {
     String amentities(int rating){
         return "tv";
     }
+
     int isFull(int capacity){
         return 0;
     }
+
     public int getCapacity() {
         return capacity;
     }

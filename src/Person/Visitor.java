@@ -90,6 +90,19 @@ public class Visitor extends Person{
         System.out.println("\n\nVisits are only available during workdays from 12:00 to 16:00");
     }
 
+    public void createVisitor(Visitor visitor){
+        visitor.risk(visitor.getAge());
+        Scanner status = new Scanner(System.in);
+        System.out.println("\n\nInput 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
+        String inputStatus = status.nextLine();
+        Scanner relationship = new Scanner(System.in);
+        System.out.println("\n\nInput visitors relationship, either 'family', 'friend', or 'other'");
+        String inputRelationship = relationship.nextLine();
+
+        visitor.setStatus(inputStatus);
+        visitor.setPatientRelationship(inputRelationship);
+    }
+
     public String getPatientRelationship() {
         return patientRelationship;
     }
@@ -106,16 +119,4 @@ public class Visitor extends Person{
         this.status = status;
     }
 
-    public void createVisitor(Visitor visitor){
-        visitor.risk(visitor.getAge());
-        Scanner status = new Scanner(System.in);
-        System.out.println("\n\nInput 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
-        String inputStatus = status.nextLine();
-        Scanner relationship = new Scanner(System.in);
-        System.out.println("\n\nInput visitors relationship, either 'family', 'friend', or 'other'");
-        String inputRelationship = relationship.nextLine();
-
-        visitor.setStatus(inputStatus);
-        visitor.setPatientRelationship(inputRelationship);
-    }
 }

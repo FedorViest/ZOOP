@@ -43,11 +43,6 @@ public class Date {
         this.timeHours = timeHours;
     }
 
-    /*public int convertTimeMinutes(double time){
-        double minutes = (time - (int) time) * 60;
-        return (int)minutes;
-    }*/
-
     public int convertTime(int hour, int minute){
         return hour * 60 + minute;
     }
