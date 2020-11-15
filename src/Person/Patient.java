@@ -6,13 +6,16 @@ public class Patient extends Person{
     private boolean hospitalised;
     private String allergies;
     private String diagnosis;
+    private float time;
+    private int day;
+    private int month;
 
 
     //association
-    public Patient(Date date) {
-        date.getDay();
-        date.getTime();
-        date.getMonth();
+    public Patient(float time, int day, int month) {
+        this.time = time;
+        this.day = day;
+        this.month = month;
     }
 
     double cured () {
@@ -49,5 +52,29 @@ public class Patient extends Person{
 
     public void setDiagnosis(String diagnosis) {
         this.diagnosis = diagnosis;
+    }
+
+    public float getTime() {
+        return time;
+    }
+
+    public void setTime(float time) {
+        this.time = time;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
     }
 }

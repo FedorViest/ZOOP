@@ -1,6 +1,7 @@
 package Hospital;
 
 import Date.Date;
+import Person.Patient;
 import Person.Visitor;
 import java.util.Scanner;
 
@@ -51,6 +52,15 @@ public class Main {
 
                 System.out.println("\n\nCurrent amount of visitors is: " + count);
             }
+            else if (newhandler.equals("patient")) {
+                Date date = new Date();
+                date.setDay(6);
+                date.setMonth(4);
+                date.setTime(13);
+                Patient patient = new Patient(date.getTime(), date.getDay(), date.getMonth());
+                System.out.println("Checkup of patient is : " + patient.getDay() + "." + patient.getMonth() + ". at " + patient.getTime() + "0\n\n");
+            }
+
             else if (newhandler.equals("exit") || newhandler.equals("end") || newhandler.equals("close")){
                 System.out.println("Ending inputting...");
                 break;
@@ -60,10 +70,11 @@ public class Main {
                 System.out.println("Ending inputting...");
                 break;
             }
+
         }
     }
     public static void navigationMenu(){
-        System.out.println("Input 'visit' for visit");
+        System.out.println("Input 'visit' for visit, 'patient' to see patients order time and date");
            /* System.out.println("Input 'patient' for appointment order");
             System.out.println("Input 'visit' for visit");*/
         System.out.println("Input 'end' or 'close' or 'exit' to end inputting\n\n\n");

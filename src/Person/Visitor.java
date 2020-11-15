@@ -59,7 +59,7 @@ public class Visitor extends Person{
     }
 
     //overloading of function isEjected
-
+    //aggregation
     public boolean isEjected(Date date){
         return date.getTime() >= 720 && date.getTime() <= 960;
     }

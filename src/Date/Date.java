@@ -46,7 +46,7 @@ public class Date {
     public int convertTime(int hour, int minute){
         return hour * 60 + minute;
     }
-
+    //aggregation
     public void createTime(Date date, Visitor visitor){
         visitor.visitsAvailable();
         System.out.println("");
