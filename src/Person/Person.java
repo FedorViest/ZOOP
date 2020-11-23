@@ -1,6 +1,6 @@
 package Person;
 
-public class Person {
+public abstract class Person {
     private int age;
     private int personalID;
     private String gender;

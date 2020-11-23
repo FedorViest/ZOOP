@@ -1,11 +1,14 @@
 package Department;
 
-public class Room extends Department {
+public abstract class Room implements Department {
     private int capacity;
     private int rating;
     private int roomID;
+    private int floor;
+    private int personelleRequired;
+    private int numberOfRooms;
+    private String type;
     public Room(){
-        
     }
 
     String amentities(int rating){
@@ -38,6 +41,29 @@ public class Room extends Department {
 
     public void setRoomID(int roomID) {
         this.roomID = roomID;
+    }
+    public int getFloor() {
+        return floor;
+    }
+
+    public void setFloor(int floor) {
+        this.floor = floor;
+    }
+
+    public int getPersonelleRequired() {
+        return personelleRequired;
+    }
+
+    public void setPersonelleRequired(int personelleRequired) {
+        this.personelleRequired = personelleRequired;
+    }
+
+    public int getNumberOfRooms() {
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(int numberOfRooms) {
+        this.numberOfRooms = numberOfRooms;
     }
 
 }

@@ -57,7 +57,7 @@ public class Main {
                 date.setDay(6);
                 date.setMonth(4);
                 date.setTime(13);
-                Patient patient = new Patient(date.getTime(), date.getDay(), date.getMonth());
+                Patient patient = new Patient(date);
                 System.out.println("Checkup of patient is : " + patient.getDay() + "." + patient.getMonth() + ". at " + patient.getTime() + "0\n\n");
             }
 

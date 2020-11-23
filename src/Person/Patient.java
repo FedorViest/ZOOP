@@ -10,12 +10,13 @@ public class Patient extends Person{
     private int day;
     private int month;
 
-
+    Date date = new Date();
     //association
-    public Patient(float time, int day, int month) {
-        this.time = time;
-        this.day = day;
-        this.month = month;
+    public Patient(Date date) {
+        this.date = date;
+        this.day = this.date.getDay();
+        this.month = this.date.getMonth();
+        this.time = this.date.getTime();
     }
 
     double cured () {

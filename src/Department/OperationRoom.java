@@ -15,4 +15,9 @@ public class OperationRoom extends Room{
     public void getReady(boolean isReady){
         this.isReady = isReady;
     }
+
+    @Override
+    public int infectionRisk(String type){
+        return 1;
+    }
 }
