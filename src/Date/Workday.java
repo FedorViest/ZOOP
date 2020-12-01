@@ -5,8 +5,11 @@ public class Workday {
     public Workday(){
     }
 
-    boolean isWeekend(int day){
-        return day % 6 == 0 || day % 7 == 0;
+    public boolean isWeekend(int day){
+        if (day % 7 == 6 || day % 7 == 0){
+            return true;
+        }
+        return false;
     }
 
     public int getDay(){

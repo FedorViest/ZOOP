@@ -11,5 +11,5 @@ public interface Department {
     }
     */
 
-    int infectionRisk(String type);
+    int infectionRisk();
 }

@@ -1,21 +1,24 @@
 package Department;
 import Person.Seller;
 
-public class Buffet extends Department {
+public abstract class Buffet implements Department {
 
-    private String food;
+    private String[] food = {"Vyprazany syr", "Segedinsky gulas", "Cezar Salat", "Kuracie prsia", "Parenne buchty"};
     private int price;
+    private Seller seller;
+
+    public Buffet(){
+        this.seller = new Seller();
+        seller.getisWorking();
+    }
+
+    @Override
+    public int infectionRisk(){
+        return 1;
+    }
 
     boolean isOpen(Seller seller){
         return true;
-    }
-
-    public String getFood() {
-        return food;
-    }
-
-    public void setFood(String food) {
-        this.food = food;
     }
 
     public int getPrice() {

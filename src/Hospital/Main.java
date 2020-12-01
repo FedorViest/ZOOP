@@ -1,8 +1,14 @@
 package Hospital;
 
 import Date.Date;
+import Department.Buffet;
+import Department.Room;
 import Person.Patient;
+import Person.Person;
+import Person.Seller;
 import Person.Visitor;
+
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -61,6 +67,42 @@ public class Main {
                 System.out.println("Checkup of patient is : " + patient.getDay() + "." + patient.getMonth() + ". at " + patient.getTime() + "0\n\n");
             }
 
+            else if (newhandler.equals("buffet")){
+                Date date = new Date();
+                System.out.println("Input day(1-31) to see if the buffet is open.\n");
+                Scanner day = new Scanner(System.in);
+                int inputday = day.nextInt();
+                date.setDay(inputday);
+                if (inputday > 31 || inputday < 1){
+                    System.out.println("Invalid day number.\n\n");
+                    continue;
+                }
+                Buffet buffet = new Buffet(){
+                    @Override
+                    public int infectionRisk() {
+                        return 0;
+                    }
+                };
+                int working = generateRandom(0, 2);
+                if (working == 0) {
+                    System.out.println("Unfortunately buffet on this day is closed, because seller is not at work.\n\n");
+                }
+                else{
+                    //downcasting
+                    Person seller = new Seller();
+                    seller.isHealthy("healthy");
+
+                    //upcasting
+                    Seller seller1 = (Seller)seller;
+                    if (seller1.isHealthy(date.getDay())){
+                        System.out.println("\nBuffet is open\n\n");
+                    }
+                    else{
+                        System.out.println("\nBuffet is closed\n\n");
+                    }
+                }
+            }
+
             else if (newhandler.equals("exit") || newhandler.equals("end") || newhandler.equals("close")){
                 System.out.println("Ending inputting...");
                 break;
@@ -75,9 +117,11 @@ public class Main {
     }
     public static void navigationMenu(){
         System.out.println("Input 'visit' for visit, 'patient' to see patients order time and date");
-           /* System.out.println("Input 'patient' for appointment order");
-            System.out.println("Input 'visit' for visit");*/
         System.out.println("Input 'end' or 'close' or 'exit' to end inputting\n\n\n");
+    }
+
+    public static int generateRandom(int min, int max){
+        return (int) (Math.random() * (max - min) + min);
     }
 
 

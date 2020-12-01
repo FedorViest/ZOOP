@@ -17,7 +17,7 @@ public class OperationRoom extends Room{
     }
 
     @Override
-    public int infectionRisk(String type){
+    public int infectionRisk(){
         return 1;
     }
 }
