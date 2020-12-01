@@ -96,6 +96,7 @@ public class Main {
                     Seller seller1 = (Seller)seller;
                     if (seller1.isHealthy(date.getDay())){
                         System.out.println("\nBuffet is open\n\n");
+                        buffet.menu(date);
                     }
                     else{
                         System.out.println("\nBuffet is closed\n\n");
@@ -116,7 +117,7 @@ public class Main {
         }
     }
     public static void navigationMenu(){
-        System.out.println("Input 'visit' for visit, 'patient' to see patients order time and date");
+        System.out.println("Input 'visit' for visit, 'patient' to see patients order time and date, 'buffet' to see if buffet is open and to see daily menu");
         System.out.println("Input 'end' or 'close' or 'exit' to end inputting\n\n\n");
     }
 
