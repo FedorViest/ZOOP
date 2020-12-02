@@ -45,16 +45,16 @@ public class Visitor extends Person{
 
     public void risk(int percentage){
         if (infectionChance(percentage) <= 25){
-            System.out.println("Chance of getting infected is low");
+            System.out.println("Chance of getting infected is low\n");
         }
         if (infectionChance(percentage) > 25 && infectionChance(percentage) <= 50){
-            System.out.println("Chance of getting infected is medium");
+            System.out.println("Chance of getting infected is medium\n");
         }
         if (infectionChance(percentage) > 50 && infectionChance(percentage) <=75){
-            System.out.println("Chance of getting infected is high");
+            System.out.println("Chance of getting infected is high\n");
         }
         if (infectionChance(percentage) > 75 && infectionChance(percentage) <= 100){
-            System.out.println("Chance of getting infected is extremely high");
+            System.out.println("Chance of getting infected is extremely high\n");
         }
     }
 
@@ -81,22 +81,30 @@ public class Visitor extends Person{
             return true;
         }
         else{
-            System.out.println("\n\nVisitor cannot come in, because only family members or friends can come in");
+            System.out.println("==============================================================================");
+            System.out.println("| Visitor cannot come in, because only family members or friends can come in |");
+            System.out.println("==============================================================================");
             return false;
         }
     }
 
     public void visitsAvailable(){
-        System.out.println("\n\nVisits are only available during workdays from 12:00 to 16:00");
+        System.out.println("=================================================================");
+        System.out.println("| Visits are only available during workdays from 12:00 to 16:00 |");
+        System.out.println("=================================================================");
     }
 
     public void createVisitor(Visitor visitor){
         visitor.risk(visitor.getAge());
         Scanner status = new Scanner(System.in);
-        System.out.println("\n\nInput 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy");
+        System.out.println("==========================================================================================");
+        System.out.println("| Input 'healthy' if visitor is healthy or 'sick' or 'unhealthy' if visitor is unhealthy |");
+        System.out.println("==========================================================================================");
         String inputStatus = status.nextLine();
         Scanner relationship = new Scanner(System.in);
-        System.out.println("\n\nInput visitors relationship, either 'family', 'friend', or 'other'");
+        System.out.println("======================================================================");
+        System.out.println("| Input visitors relationship, either 'family', 'friend', or 'other' |");
+        System.out.println("======================================================================");
         String inputRelationship = relationship.nextLine();
 
         visitor.setStatus(inputStatus);

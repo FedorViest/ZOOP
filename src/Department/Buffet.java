@@ -9,16 +9,21 @@ public abstract class Buffet implements Department {
     //final attribute
     private final String[] food = {"Vyprazany syr + hranolky", "Segedinsky gulas + knedla", "Cezar Salat", "Kuracie prsia + zemiakova kasa", "Parenne buchty s makom"};
 
+    //static attribute
+    private static Buffet buffet = null;
+
     //composition
-    public Buffet(){
+    private Buffet(){
         Seller seller = new Seller();
         seller.getisWorking();
     }
 
+
+    //abstract class
     @Override
-    public int infectionRisk(){
-        return 1;
-    }
+    public abstract int infectionRisk();
+
+
 
     boolean isOpen(Seller seller){
         return true;
@@ -64,6 +69,19 @@ public abstract class Buffet implements Department {
         }
         else
             System.out.println("Invalid entry\n");
+    }
+
+    //Singleton
+    public static Buffet getInstance(){
+        if (buffet == null){
+            buffet = new Buffet(){
+                @Override
+                public int infectionRisk() {
+                    return 0;
+                }
+            };
+        }
+        return buffet;
     }
 
 }

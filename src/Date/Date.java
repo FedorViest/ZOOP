@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class Date {
     private int day;
     private int month;
-    private int year;
     private int timeHours;
 
 
@@ -25,14 +24,6 @@ public class Date {
 
     public void setMonth(int month) {
         this.month = month;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
     }
 
     public int getTime() {
