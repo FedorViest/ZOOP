@@ -5,6 +5,7 @@ public abstract class Person {
     private int personalID;
     private String gender;
 
+
     public int getAge() {
         return age;
     }

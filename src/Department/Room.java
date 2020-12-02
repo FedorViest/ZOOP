@@ -1,13 +1,17 @@
 package Department;
 
 public abstract class Room implements Department {
-    private int capacity;
+
+    //static attribute
+    private static int capacity;
+
     private int rating;
     private int roomID;
     private int floor;
     private int personelleRequired;
     private int numberOfRooms;
     private String type;
+
     public Room(){
     }
 
@@ -24,7 +28,7 @@ public abstract class Room implements Department {
     }
 
     public void setCapacity(int capacity) {
-        this.capacity = capacity;
+        Room.capacity = capacity;
     }
 
     public int getRating() {

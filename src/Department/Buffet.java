@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public abstract class Buffet implements Department {
 
+    //final attribute
     private final String[] food = {"Vyprazany syr + hranolky", "Segedinsky gulas + knedla", "Cezar Salat", "Kuracie prsia + zemiakova kasa", "Parenne buchty s makom"};
-    private int price;
-    private Seller seller;
 
+    //composition
     public Buffet(){
-        this.seller = new Seller();
+        Seller seller = new Seller();
         seller.getisWorking();
     }
 
@@ -22,14 +22,6 @@ public abstract class Buffet implements Department {
 
     boolean isOpen(Seller seller){
         return true;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public void menu(Date date){

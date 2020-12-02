@@ -12,6 +12,7 @@ public class Seller extends Person {
     public boolean getisWorking(){
         return isWorking;
     }
+
     public boolean isHealthy(int day){
         Workday workday = new Workday();
         if (workday.isWeekend(day)){

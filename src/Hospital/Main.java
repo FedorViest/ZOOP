@@ -2,13 +2,11 @@ package Hospital;
 
 import Date.Date;
 import Department.Buffet;
-import Department.Room;
 import Person.Patient;
 import Person.Person;
 import Person.Seller;
 import Person.Visitor;
 
-import java.util.Random;
 import java.util.Scanner;
 
 
@@ -69,31 +67,35 @@ public class Main {
 
             else if (newhandler.equals("buffet")){
                 Date date = new Date();
+
                 System.out.println("Input day(1-31) to see if the buffet is open.\n");
                 Scanner day = new Scanner(System.in);
                 int inputday = day.nextInt();
                 date.setDay(inputday);
+
                 if (inputday > 31 || inputday < 1){
                     System.out.println("Invalid day number.\n\n");
                     continue;
                 }
+
                 Buffet buffet = new Buffet(){
                     @Override
                     public int infectionRisk() {
                         return 0;
                     }
                 };
+
                 int working = generateRandom(0, 2);
                 if (working == 0) {
                     System.out.println("Unfortunately buffet on this day is closed, because seller is not at work.\n\n");
                 }
                 else{
-                    //downcasting
-                    Person seller = new Seller();
-                    seller.isHealthy("healthy");
-
                     //upcasting
-                    Seller seller1 = (Seller)seller;
+                    Person person = new Seller();
+                    person.isHealthy("healthy");
+
+                    //downcasting
+                    Seller seller1 = (Seller)person;
                     if (seller1.isHealthy(date.getDay())){
                         System.out.println("\nBuffet is open\n\n");
                         buffet.menu(date);
