@@ -22,15 +22,24 @@ public class Orders extends Date{
     public void printTerm(){
         int day, month;
         float hour;
-        System.out.println("Input 'yes' if you wish to see all reservations, otherwise input 'no'\n");
+        System.out.println("===========================================================================");
+        System.out.println("|| Input 'yes' if you wish to see all reservations, otherwise input 'no' ||");
+        System.out.println("===========================================================================");
+
         Scanner handler = new Scanner(System.in);
         String inputhandler = handler.nextLine();
+
         if (inputhandler.equals("yes")){
-            System.out.println("Reserved checkups so far are:\n");
+
+            System.out.println("==================================");
+            System.out.println("|| Reserved checkups so far are ||");
+            System.out.println("==================================");
+
             for (float term : terms) {
                 month = (int) term / 30;
                 day = (int) term - (month) * 30;
                 hour = (term - day - month * 30) * 100;
+
                 if (month == 0)
                     month = 1;
                 if (day == 0)

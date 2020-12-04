@@ -45,23 +45,39 @@ public class Nurse extends Staff{
     public void createNurse(int count) {
         for (int i = 0; i < count; i++) {
             System.out.println("Nurse " + (i + 1));
-            System.out.println("Set main skill:\n");
+
+            System.out.println("====================");
+            System.out.println("|| Set main skill ||");
+            System.out.println("====================");
+
             Scanner specialise = new Scanner(System.in);
             String newspecialise = specialise.nextLine();
 
-            System.out.println("Set experience years:\n");
+            System.out.println("==========================");
+            System.out.println("|| Set experience years ||");
+            System.out.println("==========================");
+
             Scanner xpyears = new Scanner(System.in);
             int newxpyears = xpyears.nextInt();
 
-            System.out.println("Set gender:\n");
+            System.out.println("================");
+            System.out.println("|| Set gender ||");
+            System.out.println("================");
+
             Scanner gender = new Scanner(System.in);
             String newgender = gender.nextLine();
 
-            System.out.println("Set if nurse has family('1' = yes|'0' = no):\n");
+            System.out.println("=================================================");
+            System.out.println("|| Set if nurse has family('1' = yes|'0' = no) ||");
+            System.out.println("=================================================");
+
             Scanner family = new Scanner(System.in);
             int inputfamily = family.nextInt();
 
-            System.out.println("Set worked hours(this week):\n");
+            System.out.println("=================================");
+            System.out.println("|| Set worked hours(this week) ||");
+            System.out.println("=================================");
+
             Scanner workedHours = new Scanner(System.in);
             int newworkedHours = workedHours.nextInt();
 

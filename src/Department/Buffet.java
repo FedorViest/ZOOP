@@ -24,10 +24,15 @@ public abstract class Buffet implements Department {
     @Override
     public abstract int infectionRisk();
 
+    //association
     public void menu(Date date){
-        System.out.println("Select if you wish to see full weeks menu ('week') or menu of the day ('day'):\n");
+        System.out.println("===================================================================================");
+        System.out.println("|| Select if you wish to see full weeks menu ('week') or menu of the day ('day') ||");
+        System.out.println("===================================================================================");
+
         Scanner handler = new Scanner(System.in);
         String inputhandler = handler.next();
+
         if (inputhandler.equals("day")) {
             if (date.getDay() % 7 == 1) {
                 System.out.println("Todays menu item is: " + food[0]);
@@ -51,19 +56,24 @@ public abstract class Buffet implements Department {
             }
         }
         else if (inputhandler.equals("week")){
-            System.out.println("Monday: " + food[0]);
-            System.out.println("\tPrice: " + 4.50 + "€\n");
-            System.out.println("Tuesday: " + food[1]);
-            System.out.println("\tPrice: " + 5.00 + "€\n");
-            System.out.println("Wednesday: " + food[2]);
-            System.out.println("\tPrice: " + 3.60 + "€\n");
-            System.out.println("Thursday: " + food[3]);
-            System.out.println("\tPrice: " + 4.00 + "€\n");
-            System.out.println("Friday: " + food[4]);
-            System.out.println("\tPrice: " + 4.20 + "€\n");
+            System.out.println("=============== This weeks menu ===============");
+            System.out.println("|| Monday: " + food[0] + "          ||");
+            System.out.println("|| \tPrice: " + 4.50 + "€                              ||");
+            System.out.println("|| Tuesday: " + food[1] + "        ||");
+            System.out.println("|| \tPrice: " + 5.00 + "€                              ||");
+            System.out.println("|| Wednesday: " + food[2] + "                    ||");
+            System.out.println("|| \tPrice: " + 3.60 + "€                              ||");
+            System.out.println("|| Thursday: " + food[3] + "  ||");
+            System.out.println("|| \tPrice: " + 4.00 + "€                              ||");
+            System.out.println("|| Friday: " + food[4] + "            ||");
+            System.out.println("|| \tPrice: " + 4.20 + "€                              ||");
+            System.out.println("===============================================\n");
         }
-        else
-            System.out.println("Invalid entry\n");
+        else {
+            System.out.println("===================");
+            System.out.println("|| Invalid entry ||");
+            System.out.println("===================");
+        }
     }
 
     //Singleton

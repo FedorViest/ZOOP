@@ -43,19 +43,31 @@ public class Doctor extends Staff{
     public void createDoctors(int count) {
         for (int i = 0; i < count; i++) {
             System.out.println("Doctor " + (i + 1));
-            System.out.println("Set specialisation:\n");
+            System.out.println("========================");
+            System.out.println("|| Set specialisation ||");
+            System.out.println("========================");
+
             Scanner specialise = new Scanner(System.in);
             String newspecialise = specialise.nextLine();
 
-            System.out.println("Set experience years:\n");
+            System.out.println("==========================");
+            System.out.println("|| Set experience years ||");
+            System.out.println("==========================");
+
             Scanner xpyears = new Scanner(System.in);
             int newxpyears = xpyears.nextInt();
 
-            System.out.println("Set gender:\n");
+            System.out.println("================");
+            System.out.println("|| Set gender ||");
+            System.out.println("================");
+
             Scanner gender = new Scanner(System.in);
             String newgender = gender.nextLine();
 
-            System.out.println("Set worked hours(this week):\n");
+            System.out.println("=================================");
+            System.out.println("|| Set worked hours(this week) ||");
+            System.out.println("=================================");
+
             Scanner workedHours = new Scanner(System.in);
             int newworkedHours = workedHours.nextInt();
 
@@ -75,5 +87,6 @@ public class Doctor extends Staff{
                 System.out.println("\tisnt able to operate due to inexperienced or high hours worked this week.\n\n");
             }
         }
+        doctors.clear();
     }
 }
