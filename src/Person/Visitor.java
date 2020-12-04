@@ -64,6 +64,7 @@ public class Visitor extends Person{
         return date.getTime() >= 720 && date.getTime() <= 960;
     }
 
+    //overloading
     public int isEjected(String status){
         if (status.equals("unhealthy") || status.equals("sick")){
             return 1;

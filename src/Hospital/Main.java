@@ -2,11 +2,14 @@ package Hospital;
 
 import Date.Date;
 import Department.Buffet;
+import Department.Room;
 import Person.Patient;
 import Person.Person;
 import Person.Seller;
 import Person.Visitor;
 import Date.Orders;
+import Person.Doctor;
+import Person.Nurse;
 
 import java.util.Scanner;
 
@@ -18,6 +21,7 @@ public class Main {
         int count = 0;
         while (true) {
             navigationMenu();
+            Orders k = new Orders();
             String newhandler = handler.nextLine();
             if (newhandler.equals("visit")) {
                 System.out.println("======================");
@@ -60,6 +64,11 @@ public class Main {
             }
             else if (newhandler.equals("patient")) {
                 Date date = new Date();
+
+                Orders order = new Orders();
+
+                order.printTerm();
+
                 System.out.println("Set day of appointment:\n");
                 Scanner day = new Scanner(System.in);
                 int inputday = day.nextInt();
@@ -82,12 +91,10 @@ public class Main {
                 Scanner time = new Scanner(System.in);
                 int inputtime = time.nextInt();
                 if (inputtime > 13 || inputtime < 7){
-                    System.out.println("Invalid input.\n");
+                    System.out.println("Invalid input(select time range between 7:00 and 13:00).\n");
                     continue;
                 }
                 date.setTime(inputtime);
-
-                Orders order = new Orders();
 
                 if (order.isOccupied(inputday, inputmonth, inputtime) || inputday % 7 == 0 || inputday % 7 ==1){
                     System.out.println("Your selected checkup date (" +inputday+"."+inputmonth+". at " + inputtime + ":00) is occupied or is weekend, please choose other date.\n");
@@ -136,7 +143,34 @@ public class Main {
             }
 
             else if (newhandler.equals("doctor")){
+                Date date = new Date();
+                System.out.println("Set day to see information about doctors present at work today.\n");
+                Scanner day = new Scanner(System.in);
+                int newday = day.nextInt();
 
+                Doctor doctor = new Doctor("a", 1, "m", 1);
+                Nurse nurse = new Nurse(1, "a", 1, "f", 1);
+
+                System.out.println("Select time of day ('night'|'day'):\n");
+                Scanner daytime = new Scanner(System.in);
+                String inputdaytime = daytime.nextLine();
+
+                int countDoctor, countNurse;
+
+                if (newday % 7 == 0 || newday % 7 == 6 || inputdaytime.equals("night")){
+                    countDoctor = generateRandom(1, 3);
+                    countNurse = generateRandom(1 ,4);
+                    doctor.createDoctors(countDoctor);
+                    nurse.createNurse(countNurse);
+                }
+                else {
+                    countDoctor = generateRandom(3, 4);
+                    countNurse = generateRandom(1 ,3);
+                    doctor.createDoctors(countDoctor);
+                    nurse.createNurse(countNurse);
+                }
+                doctor.printDoctors(countDoctor);
+                nurse.printNurse(countNurse);
             }
 
             else if (newhandler.equals("exit") || newhandler.equals("end") || newhandler.equals("close")){
@@ -148,15 +182,16 @@ public class Main {
                 System.out.println("Ending inputting...");
                 break;
             }
-
         }
     }
 
+    //final method
     public final static void navigationMenu(){
         System.out.println("Input\n'visit' for visit\n'patient' to order for checkup\n'buffet' to see if buffet is open and to see daily menu\n'doctor' to see details about doctor");
         System.out.println("Input 'end' or 'close' or 'exit' to end inputting\n");
     }
 
+    //static method
     public static int generateRandom(int min, int max){
         return (int) (Math.random() * (max - min) + min);
     }

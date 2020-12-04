@@ -46,6 +46,7 @@ public abstract class Room implements Department {
     public void setRoomID(int roomID) {
         this.roomID = roomID;
     }
+
     public int getFloor() {
         return floor;
     }

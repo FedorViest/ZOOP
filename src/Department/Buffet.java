@@ -13,6 +13,7 @@ public abstract class Buffet implements Department {
     private static Buffet buffet = null;
 
     //composition
+    //private constructor
     private Buffet(){
         Seller seller = new Seller();
         seller.getisWorking();
@@ -22,12 +23,6 @@ public abstract class Buffet implements Department {
     //abstract class
     @Override
     public abstract int infectionRisk();
-
-
-
-    boolean isOpen(Seller seller){
-        return true;
-    }
 
     public void menu(Date date){
         System.out.println("Select if you wish to see full weeks menu ('week') or menu of the day ('day'):\n");

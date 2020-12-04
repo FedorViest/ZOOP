@@ -1,7 +1,7 @@
 package Person;
 import Date.Workday;
 
-public class Seller extends Person {
+public class Seller extends Staff {
 
     private boolean isWorking;
 
